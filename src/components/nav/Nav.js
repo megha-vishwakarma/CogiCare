@@ -1,27 +1,30 @@
 import React from "react";
+import logo from "../../assets/img/logo.gif"
 
 // import navigation data
 import { navigationData } from "../../data";
-
+import { useNavigate } from "react-router-dom";
 
 const Nav = () => {
+
+    const navigate = useNavigate();
     const [isMenuHidden, setMenuHidden] = React.useState(true);
 
     const toggleMenu = () => {
         console.log(isMenuHidden);
         setMenuHidden(!isMenuHidden);
     };
-    const [user, setUser] = React.useState(false);
 
 
 
     const onCLickHandler = (path) => {
         setMenuHidden(true);
+        navigate("/");
     };
 
     return (
-        <nav className=" fixed z-50 flex flex-wrap items-center justify-between w-full py-2 md:py-4 px-4 text-lg text-gray-700 bg-white shadow-md">
-            <h1
+        <nav className=" flex flex-wrap items-center justify-between w-full py-2 md:py-4 px-4 text-lg text-gray-700 bg-white shadow-md ">
+            {/* <h1
                 className="md:text-2xl text-xl font-bold cursor-pointer"
                 onClick={() => {
                     onCLickHandler("/");
@@ -31,7 +34,13 @@ const Nav = () => {
                 <span className=" font-semibold md:text-3xl text-2xl text-blue-700">
                 Care
                 </span>{" "}
-            </h1>
+            </h1> */}
+
+            <img 
+            onClick={() => {
+                onCLickHandler("/");
+            }}
+            className=" cursor-pointer w-60" src= {logo} alt="logo"/>
 
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -57,6 +66,7 @@ const Nav = () => {
                 id="menu"
             >
                 <ul className="flex gap-x-4">
+                    <h2 className="cursor-pointer text-black font-semibold" onClick={()=>{navigate("/game-menu")}}>Games</h2>
                     {navigationData.map((item, index) => {
                         return (
                             <li key={index}>

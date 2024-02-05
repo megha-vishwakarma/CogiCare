@@ -9,6 +9,7 @@ import Feature2Img from '../src/assets/img/features/feature21.png';
 import Feature3Img from '../src/assets/img/features/feature31.png';
 import Feature4Img from '../src/assets/img/features/feature41.png';
 import LogoV2 from '../src/assets/img/logo1.png';
+import logo from "../src/assets/img/logo.gif"
 import HeroImage from '../src/assets/img/hero-img1.png';
 import Feature1BgImg from '../src/assets/img/features/feature1_bg.png';
 import Feature2BgImg from '../src/assets/img/features/feature2_bg.png';
@@ -105,7 +106,7 @@ export const ctaData = {
 };
 
 export const footerData = {
-  logo: LogoV2,
+  logo: logo,
   address: 'Prithvi ',
   email: 'CogniCare@gmail.com',
   phone: '9999994444',
